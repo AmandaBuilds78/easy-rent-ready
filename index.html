@@ -1,6 +1,90 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Easy Rent Ready</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#667eea"><style>*{box-sizing:border-box}body{font-family:Arial;margin:0;background:#f0f2ff}.hero{background:linear-gradient(135deg,#667eea,#764ba2);color:white;text-align:center;padding:35px 20px;border-radius:0 0 30px 30px}.hero h1{font-size:32px;margin:5px}.badge{display:inline-block;background:#ffca45;color:#000;padding:6px 14px;border-radius:20px;font-weight:bold;font-size:13px}.card{background:white;margin:15px;padding:22px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.08)}input,select,textarea{width:100%;padding:13px;margin:8px 0;border:1.5px solid #ddd;border-radius:12px;font-size:16px}button{width:100%;padding:15px;border:none;border-radius:12px;font-size:17px;font-weight:bold} .btn-yellow{background:#ffca45}.btn-purple{background:#667eea;color:white}.price{font-size:28px;font-weight:bold;color:#667eea}.footer{text-align:center;padding:20px;color:#666;font-size:13px}</style></head>
-<body><div class="hero"><div class="badge">★ TRUSTED - KENYA & USA ★</div><h1>EASY RENT READY</h1><p>One Place. More Possibilities.</p><p><b>Homes - Relationships - Opportunities</b></p></div>
-<div class="card"><h2>List Your House - FREE</h2><p>Have a house? List it free. We bring you tenants.</p><form action="/list-house" method="POST"><input name="owner" placeholder="Your Name" required><input name="phone" placeholder="WhatsApp / Phone" required><input name="location" placeholder="Location - e.g. Sare, Migori" required><input name="price" placeholder="Rent Price" required><textarea name="details" placeholder="Details"></textarea><button class="btn-purple" type="submit">Submit House - FREE</button></form></div>
-<div class="card" style="border:2px solid #667eea"><h2>Membership</h2><p class="price">$20 <span style="font-size:16px;color:#666">/ month</span></p><p>Unlock Houses, Dating, Jobs.</p><form action="/join" method="POST"><input name="name" placeholder="Your Full Name" required><input name="email" type="email" placeholder="Your Email" required><input name="phone" placeholder="WhatsApp Number" required><select name="interest" required><option value="">I want...</option><option>House</option><option>Dating</option><option>Job / Worker</option><option>All Services</option></select><button class="btn-yellow" type="submit">Join Now - $20/month</button></form><p style="text-align:center;font-size:13px">Pay with PayPal to amandaelizabet345@gmail.com</p></div>
-<div class="footer"><p><b>Easy Rent Ready</b><br>Contact: amandaelizabet345@gmail.com</p></div></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Rent Ready - USA</title>
+<style>
+*{box-sizing:border-box}body{font-family:Arial,sans-serif;margin:0;background:#f8f9ff;padding-bottom:80px}
+.top{padding:15px;font-size:22px;font-weight:bold}
+.welcome{padding:5px 20px}
+.welcome h1{font-size:32px;line-height:1.2}
+.welcome h1 span{color:#00a8cc}
+.blue-bar{border-left:4px solid #00a8cc;padding-left:15px;margin:15px 0}
+.blue-bar b{font-size:19px}.blue-bar p{color:#777}
+.card{background:white;margin:15px;border-radius:15px;padding:15px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.houses{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+.house{background:white;border-radius:15px;overflow:hidden}
+.house img{width:100%;height:130px;object-fit:cover}
+.house div{padding:10px}
+.tabs{display:flex;background:white;margin:10px;border-radius:30px;padding:5px}
+.tabs div{flex:1;text-align:center;padding:10px;border-radius:25px;font-weight:bold;cursor:pointer}
+.tabs .active{background:#00a8cc;color:white}
+.paybox{background:white;margin:15px;border-radius:20px;padding:25px;text-align:center;box-shadow:0 2px 15px rgba(0,0,0,0.1)}
+.paybtn{background:#00a8cc;color:white;border:none;width:100%;padding:16px;border-radius:30px;font-size:19px;font-weight:bold}
+.lock{font-size:50px}.hidden{display:none}.pad{padding:0 15px}
+input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:10px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;border-top:1px solid #ddd;padding:8px 0}
+.bottom div{flex:1;text-align:center;font-size:13px;color:#888}
+.bottom .active{color:#00a8cc;font-weight:bold}
+</style>
+</head>
+<body>
+<div id="page-welcome">
+<div class="top">🏠 Easy Rent Ready</div>
+<div class="welcome"><h1>Welcome to Easy Rent Ready<br><span>USA</span></h1>
+<div class="blue-bar"><b>One Place. More Possibilities.</b><p>Houses - Jobs - Dating. All in one app.</p></div></div>
+
+<div class="paybox" id="paySection">
+<div class="lock">🔒</div><h2>Join to Unlock Everything</h2><p style="color:#777">Pay once, see all listings</p>
+<h1 style="color:#00a8cc">$1.70</h1>
+<p>✅ Houses in USA<br>✅ Job Opportunities<br>✅ Dating</p>
+<a href="https://www.paypal.com/paypalme/YOURNAME/1.70" target="_blank" style="text-decoration:none"><button class="paybtn">Pay $1.70 to Join →</button></a>
+<p style="font-size:13px;color:#888">After payment, tap below</p>
+<button onclick="unlock()" style="background:white;border:1px solid #00a8cc;color:#00a8cc;padding:12px;width:100%;border-radius:30px;font-weight:bold;margin-top:10px">I Have Paid - Unlock Now</button>
+</div>
+
+<div id="unlockedSection" class="hidden">
+<div class="tabs">
+<div id="tab-houses" class="active" onclick="showCat('houses')">🏠 Houses</div>
+<div id="tab-jobs" onclick="showCat('jobs')">💼 Jobs</div>
+<div id="tab-dating" onclick="showCat('dating')">❤️ Dating</div>
+</div>
+
+<div id="cat-houses"><div class="houses">
+<div class="house"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400"><div><b>$1,200 / mo</b><p>1 BEDROOM - DALLAS, TX</p><p style="color:green">Available Now</p></div></div>
+<div class="house"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400"><div><b>$950 / mo</b><p>2 BEDROOM - HOUSTON, TX</p><p style="color:green">Available Now</p></div></div>
+<div class="house"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400"><div><b>$1,500 / mo</b><p>2 BEDROOM - AUSTIN, TX</p><p style="color:green">Available Now</p></div></div>
+<div class="house"><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=400"><div><b>$850 / mo</b><p>1 BEDROOM - MIAMI, FL</p><p style="color:green">Available Now</p></div></div>
+</div></div>
+
+<div id="cat-jobs" class="hidden">
+<div class="card"><b>💼 Warehouse Associate - Dallas, TX</b><br><span style="color:green">$18 / hr</span><br>Full time. No experience needed.</div>
+<div class="card"><b>💼 Babysitter - Houston, TX</b><br><span style="color:green">$15 / hr</span><br>Part time. Weekends only.</div>
+<div class="card"><b>💼 Delivery Driver - Austin, TX</b><br><span style="color:green">$20 / hr + Tips</span><br>Need car + license.</div>
+<div class="card"><b>💼 Cleaner - Miami, FL</b><br><span style="color:green">$16 / hr</span><br>Daily cleaning, flexible hours.</div>
+</div>
+
+<div id="cat-dating" class="hidden">
+<div class="card"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:80px;height:80px;border-radius:50%;object-fit:cover"><br><b>Sarah, 24 - Dallas, TX</b><br>Looking for serious relationship. Loves travel & music. ❤️</div>
+<div class="card"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:80px;height:80px;border-radius:50%;object-fit:cover"><br><b>Mike, 28 - Houston, TX</b><br>Looking for friendship & dating. Loves gym & movies. ❤️</div>
+<div class="card"><img src="https://randomuser.me/api/portraits/women/68.jpg" style="width:80px;height:80px;border-radius:50%;object-fit:cover"><br><b>Jessica, 26 - Austin, TX</b><br>Single, looking for honest partner. ❤️</div>
+</div>
+</div>
+</div>
+
+<div id="page-post" class="hidden"><div class="pad"><h2>Post Your Listing - FREE</h2><input placeholder="Your Name"><input placeholder="Title e.g. House / Job / Dating"><input placeholder="Location e.g. Dallas, TX"><input placeholder="Price / Salary"><button class="paybtn" onclick="alert('Listing posted! We will review it.')">Post Listing →</button></div></div>
+
+<div class="bottom">
+<div onclick="go('welcome',this)" class="active">🏠<br>Home</div>
+<div onclick="go('post',this)">📷<br>Post</div>
+</div>
+
+<script>
+if(localStorage.getItem('paid')=='yes'){document.getElementById('paySection').classList.add('hidden');document.getElementById('unlockedSection').classList.remove('hidden');}
+function unlock(){localStorage.setItem('paid','yes');document.getElementById('paySection').classList.add('hidden');document.getElementById('unlockedSection').classList.remove('hidden');alert('Welcome! You are now unlocked 🎉');}
+function showCat(cat){document.getElementById('cat-houses').classList.add('hidden');document.getElementById('cat-jobs').classList.add('hidden');document.getElementById('cat-dating').classList.add('hidden');document.getElementById('cat-'+cat).classList.remove('hidden');document.querySelectorAll('.tabs div').forEach(d=>d.classList.remove('active'));document.getElementById('tab-'+cat).classList.add('active');}
+function go(page,el){document.querySelectorAll('[id^="page-"]').forEach(d=>d.classList.add('hidden'));document.getElementById('page-'+page).classList.remove('hidden');document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('active'));el.classList.add('active');}
+</script>
+</body>
+</html>
